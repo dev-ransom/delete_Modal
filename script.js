@@ -5,7 +5,7 @@ greenBtn.addEventListener("click", ()=>{
     Modal.style.display = 'flex';
 });
 
-let closeModalAndRestoreContent = () =>{
+const closeModalAndRestoreContent = () =>{
     textContent.style.display = "block";
     Modal.style.display = 'none';
 }
@@ -14,3 +14,9 @@ cancelBtn.addEventListener('click', closeModalAndRestoreContent);
 deleteBtn.addEventListener('click', closeModalAndRestoreContent);
 closeModal.addEventListener('click', closeModalAndRestoreContent);
 
+window.addEventListener('click', (e)=>{
+    if(e.target == Modal){
+        Modal.style.display = 'none';
+        textContent.style.display = "block";
+    };
+});
